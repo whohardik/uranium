@@ -3,6 +3,12 @@ const logger = require('./logger')
 
 const router = express.Router();
 
+router.get('/user-profile/:abcd', function(req, res) {
+    console.log(req)
+    console.log(req.params.abcd)
+    res.send('dummy response')
+})
+
 router.get('/test-me', function (req, res) {
     console.log('------------------')
     console.log(req)
