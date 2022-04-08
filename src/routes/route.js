@@ -3,19 +3,25 @@ const logger = require('./logger')
 
 const router = express.Router();
 
-router.get('/user-profile/:abcd', function(req, res) {
-    console.log(req)
-    console.log(req.params.abcd)
-    res.send('dummy response')
+router.get('/Movies', function(req, res) {
+    let arr = ["titanic", "marwel", "superman", "fanna", "batman"]
+    res.send(arr)
 })
 
-router.get('/test-me', function (req, res) {
-    console.log('------------------')
-    console.log(req)
-    console.log('------------------')
-    console.log('These are the request query parameters: ', req.query)
-    res.send('My first ever api!')
+router.get('/movies/:indexnumber', function(req, res){
+const arr =["titanic", "marwel", "superman","fanna", "batman"]
+const id = req.params.indexnumber
+if (id<arr.length){
+    res.send(arr[id])
+}else{
+    res.send('use valid index')
+
+}
+
 });
+
+
+
 
 
 
